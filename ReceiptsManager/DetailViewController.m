@@ -50,7 +50,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    
     return self.allTags.count;
 }
 
@@ -60,7 +59,7 @@
         
     Tag *oneTag = self.allTags[indexPath.row];
     
-    NSLog(@"%@", oneTag.tagName);
+    //NSLog(@"%@", oneTag.tagName);
     
     cell.detailSelectionLabel.text = oneTag.tagName;
     

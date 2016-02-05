@@ -20,35 +20,52 @@
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic) NSArray *Tags;
+
+@property (nonatomic) NSMutableArray *SecTags;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.Tags = [[NSArray alloc] init];
     
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     
     self.managedObjectContext = appDelegate.managedObjectContext;
     
-    NSError *err = nil;
-    NSFetchRequest *allTags = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
-    NSArray *allFoods = [self.managedObjectContext executeFetchRequest:allTags error:&err];
-    NSLog(@"%@", allFoods);
+    NSError *errRr = nil;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    self.Tags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errRr];
     
-    for (Tag *tags in allFoods) {
-        NSLog(@"%@", tags.tagName);
-    }
+    NSLog(@"%lu", (unsigned long)self.Tags.count);
     
-    NSError *errR = nil;
-    NSFetchRequest *allReceipts = [NSFetchRequest fetchRequestWithEntityName:@"Receipt"];
-    NSArray *allFoodsa = [self.managedObjectContext executeFetchRequest:allReceipts error:&errR];
-    NSLog(@"%@", allFoodsa);
+    //NSArray *SectionReceipts = [[NSMutableArray alloc] init];
     
-    for (Receipt *receipts in allFoodsa) {
-        NSLog(@"%@", receipts.note);
-    }
+    NSMutableArray *SecReceipts = [[NSMutableArray alloc] init];
+    self.SecTags = [[NSMutableArray alloc] init];
+    
+    for (Tag *oneTag in self.Tags) {
+        NSArray *SectionTag = [[NSMutableArray alloc] init];
+        SectionTag = [oneTag.receipts allObjects];
         
+        for (Receipt *oneReceipt in SectionTag) {
+            [SecReceipts addObject:oneReceipt];
+        }
+        [self.SecTags addObject:SecReceipts];
+    }
+    
+    for (NSArray *sectionReceiptArray in self.SecTags) {
+        for (Receipt *oneReceipt in sectionReceiptArray) {
+            NSLog(@"Receipt : %@", oneReceipt.note);
+        }
+    }
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -66,7 +83,6 @@
 //    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
 //    [fetchRequest setEntity:entity];
 //    NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
-//    
 //    return allTags.count;
     
     return 1;
@@ -74,28 +90,37 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSError *errR = nil;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+//    NSError *errR = nil;
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+//    [fetchRequest setEntity:entity];
+//    NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+    
+    NSArray *secReceiptsArray = [self.SecTags objectAtIndex:section];
 
-    return allReceipts.count;
+    return secReceiptsArray.count;
 }
 
-
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    Tag *headerTag = [self.Tags objectAtIndex:section];
+    NSString *header = headerTag.tagName;
+    return header;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainTableViewCell" forIndexPath:indexPath];
     
-    NSError *errR = nil;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+//    NSError *errR = nil;
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+//    [fetchRequest setEntity:entity];
+//    NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
     
-    Receipt *oneReceipt = allReceipts[indexPath.row];
-    NSLog(@"%@", oneReceipt.note);
+    Receipt *oneReceipt = [self.SecTags objectAtIndex:indexPath.section][indexPath.row];
+
+//  Receipt *oneReceipt = allReceipts[indexPath.row];
+//  NSLog(@"%@", oneReceipt.note);
+    
     cell.noteLabel.text = oneReceipt.note;
     
     return cell;
@@ -114,7 +139,9 @@ if (editingStyle == UITableViewCellEditingStyleDelete) {
     
         NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
 
-        NSManagedObject *aManagedObject = [allReceipts objectAtIndex:indexPath.row];
+    
+        NSManagedObject *aManagedObject = allReceipts[indexPath.row];
+        //NSManagedObject *aManagedObject = [self.SecTags objectAtIndex:indexPath.section][indexPath.row];
 
         [self.managedObjectContext deleteObject:aManagedObject];
     
@@ -124,6 +151,7 @@ if (editingStyle == UITableViewCellEditingStyleDelete) {
         }
         
         //[tempReceiptArray removeObjectAtIndex:indexPath.row];
+    
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -152,13 +180,14 @@ if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        NSError *errR = nil;
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
-        [fetchRequest setEntity:entity];
-        NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+//        NSError *errR = nil;
+//        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+//        [fetchRequest setEntity:entity];
+//        NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+//        Receipt *receipt = [allReceipts objectAtIndex:indexPath.row];
         
-        Receipt *receipt = [allReceipts objectAtIndex:indexPath.row];
+        Receipt *receipt = [self.SecTags objectAtIndex:indexPath.section][indexPath.row];
         
         detailViewController.receiptInstance = receipt;
         detailViewController.managedObjectContext = self.managedObjectContext;

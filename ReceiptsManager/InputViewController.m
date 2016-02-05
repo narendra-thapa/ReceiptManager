@@ -62,7 +62,7 @@
     NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
     
     Tag *oneTag = allTags[indexPath.row];
-    NSLog(@"%@", oneTag.tagName);
+    //NSLog(@"%@", oneTag.tagName);
     
     cell.inputSelectionLabel.text = oneTag.tagName;
     

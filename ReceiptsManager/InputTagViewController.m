@@ -47,7 +47,7 @@
     [self.delegate newTagDetails:newManagedObject];
     [self.enteredTag resignFirstResponder];
     [self.tableView reloadData];
-    [self.enteredTag clearButtonMode];
+    self.enteredTag.text = @"";
     //[self.navigationController popViewControllerAnimated:YES];
 }
 
