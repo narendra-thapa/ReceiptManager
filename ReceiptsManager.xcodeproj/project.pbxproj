@@ -19,11 +19,11 @@
 		483D83781C63C3B900DD9F6E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83771C63C3B900DD9F6E /* TableViewCell.m */; };
 		483D837B1C63C3E500DD9F6E /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D837A1C63C3E500DD9F6E /* DetailTableViewCell.m */; };
 		483D837E1C63C45D00DD9F6E /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D837D1C63C45D00DD9F6E /* InputTableViewCell.m */; };
-		483D83871C63C6A400DD9F6E /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83801C63C6A400DD9F6E /* Tag+CoreDataProperties.m */; };
-		483D83881C63C6A400DD9F6E /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83821C63C6A400DD9F6E /* Tag.m */; };
-		483D83891C63C6A400DD9F6E /* Receipt+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83841C63C6A400DD9F6E /* Receipt+CoreDataProperties.m */; };
-		483D838A1C63C6A400DD9F6E /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83861C63C6A400DD9F6E /* Receipt.m */; };
 		483D83911C63E7EE00DD9F6E /* InputTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83901C63E7EE00DD9F6E /* InputTagViewController.m */; };
+		483D839A1C64425900DD9F6E /* Receipt+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83931C64425900DD9F6E /* Receipt+CoreDataProperties.m */; };
+		483D839B1C64425900DD9F6E /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83951C64425900DD9F6E /* Receipt.m */; };
+		483D839C1C64425900DD9F6E /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83971C64425900DD9F6E /* Tag+CoreDataProperties.m */; };
+		483D839D1C64425900DD9F6E /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83991C64425900DD9F6E /* Tag.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,16 +48,16 @@
 		483D837A1C63C3E500DD9F6E /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
 		483D837C1C63C45D00DD9F6E /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
 		483D837D1C63C45D00DD9F6E /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
-		483D837F1C63C6A400DD9F6E /* Tag+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tag+CoreDataProperties.h"; sourceTree = "<group>"; };
-		483D83801C63C6A400DD9F6E /* Tag+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tag+CoreDataProperties.m"; sourceTree = "<group>"; };
-		483D83811C63C6A400DD9F6E /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
-		483D83821C63C6A400DD9F6E /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
-		483D83831C63C6A400DD9F6E /* Receipt+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Receipt+CoreDataProperties.h"; sourceTree = "<group>"; };
-		483D83841C63C6A400DD9F6E /* Receipt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Receipt+CoreDataProperties.m"; sourceTree = "<group>"; };
-		483D83851C63C6A400DD9F6E /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
-		483D83861C63C6A400DD9F6E /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 		483D838F1C63E7EE00DD9F6E /* InputTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTagViewController.h; sourceTree = "<group>"; };
 		483D83901C63E7EE00DD9F6E /* InputTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTagViewController.m; sourceTree = "<group>"; };
+		483D83921C64425900DD9F6E /* Receipt+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Receipt+CoreDataProperties.h"; sourceTree = "<group>"; };
+		483D83931C64425900DD9F6E /* Receipt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Receipt+CoreDataProperties.m"; sourceTree = "<group>"; };
+		483D83941C64425900DD9F6E /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		483D83951C64425900DD9F6E /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
+		483D83961C64425900DD9F6E /* Tag+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tag+CoreDataProperties.h"; sourceTree = "<group>"; };
+		483D83971C64425900DD9F6E /* Tag+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tag+CoreDataProperties.m"; sourceTree = "<group>"; };
+		483D83981C64425900DD9F6E /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		483D83991C64425900DD9F6E /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +128,14 @@
 		483D838B1C63C6B000DD9F6E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				483D837F1C63C6A400DD9F6E /* Tag+CoreDataProperties.h */,
-				483D83801C63C6A400DD9F6E /* Tag+CoreDataProperties.m */,
-				483D83811C63C6A400DD9F6E /* Tag.h */,
-				483D83821C63C6A400DD9F6E /* Tag.m */,
-				483D83831C63C6A400DD9F6E /* Receipt+CoreDataProperties.h */,
-				483D83841C63C6A400DD9F6E /* Receipt+CoreDataProperties.m */,
-				483D83851C63C6A400DD9F6E /* Receipt.h */,
-				483D83861C63C6A400DD9F6E /* Receipt.m */,
+				483D83921C64425900DD9F6E /* Receipt+CoreDataProperties.h */,
+				483D83931C64425900DD9F6E /* Receipt+CoreDataProperties.m */,
+				483D83941C64425900DD9F6E /* Receipt.h */,
+				483D83951C64425900DD9F6E /* Receipt.m */,
+				483D83961C64425900DD9F6E /* Tag+CoreDataProperties.h */,
+				483D83971C64425900DD9F6E /* Tag+CoreDataProperties.m */,
+				483D83981C64425900DD9F6E /* Tag.h */,
+				483D83991C64425900DD9F6E /* Tag.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -211,16 +211,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				483D83911C63E7EE00DD9F6E /* InputTagViewController.m in Sources */,
-				483D83881C63C6A400DD9F6E /* Tag.m in Sources */,
 				483D83781C63C3B900DD9F6E /* TableViewCell.m in Sources */,
 				483D835B1C63BB7C00DD9F6E /* ViewController.m in Sources */,
+				483D839C1C64425900DD9F6E /* Tag+CoreDataProperties.m in Sources */,
 				483D83581C63BB7C00DD9F6E /* AppDelegate.m in Sources */,
+				483D839A1C64425900DD9F6E /* Receipt+CoreDataProperties.m in Sources */,
 				483D83611C63BB7C00DD9F6E /* ReceiptsManager.xcdatamodeld in Sources */,
 				483D83721C63C28500DD9F6E /* InputViewController.m in Sources */,
-				483D83891C63C6A400DD9F6E /* Receipt+CoreDataProperties.m in Sources */,
-				483D838A1C63C6A400DD9F6E /* Receipt.m in Sources */,
 				483D83551C63BB7C00DD9F6E /* main.m in Sources */,
-				483D83871C63C6A400DD9F6E /* Tag+CoreDataProperties.m in Sources */,
+				483D839B1C64425900DD9F6E /* Receipt.m in Sources */,
+				483D839D1C64425900DD9F6E /* Tag.m in Sources */,
 				483D837B1C63C3E500DD9F6E /* DetailTableViewCell.m in Sources */,
 				483D837E1C63C45D00DD9F6E /* InputTableViewCell.m in Sources */,
 				483D83751C63C29700DD9F6E /* DetailViewController.m in Sources */,

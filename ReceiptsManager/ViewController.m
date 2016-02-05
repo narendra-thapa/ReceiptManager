@@ -31,14 +31,6 @@
     
     self.managedObjectContext = appDelegate.managedObjectContext;
     
-//    Tag *newFood = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:self.appDelegate.managedObjectContext];
-//    newFood.tagName = @"Business";
-//    Tag *newFood2 = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:self.appDelegate.managedObjectContext];
-//    newFood2.tagName = @"Personal";
-//    
-//    [self.appDelegate saveContext];
-    
-    //AppDelegate *del3 = [UIApplication sharedApplication].delegate;
     NSError *err = nil;
     NSFetchRequest *allTags = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
     NSArray *allFoods = [self.managedObjectContext executeFetchRequest:allTags error:&err];
@@ -56,9 +48,7 @@
     for (Receipt *receipts in allFoodsa) {
         NSLog(@"%@", receipts.note);
     }
-    
-    //NSLog(@"%@", allFoods[0]);
-    
+        
     // Do any additional setup after loading the view, typically from a nib.
 }
 

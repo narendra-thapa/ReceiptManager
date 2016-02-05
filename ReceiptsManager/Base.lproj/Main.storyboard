@@ -170,6 +170,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UeG-QK-xuz" id="JTI-bx-oGD"/>
+                                    <outlet property="delegate" destination="UeG-QK-xuz" id="JWU-Au-FYR"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-mA-CjB">
                                 <rect key="frame" x="22" y="115" width="278" height="21"/>

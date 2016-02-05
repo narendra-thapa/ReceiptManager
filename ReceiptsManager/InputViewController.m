@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tagSet = [[NSMutableSet alloc] init];
     
     
     // Do any additional setup after loading the view.

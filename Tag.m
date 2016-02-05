@@ -7,6 +7,7 @@
 //
 
 #import "Tag.h"
+#import "Receipt.h"
 
 @implementation Tag
 

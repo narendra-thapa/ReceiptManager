@@ -13,6 +13,9 @@
 
 @interface DetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic) NSArray *allTags;
+
+
 @end
 
 @implementation DetailViewController
@@ -20,13 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    DetailTableViewCell *detailCell = [[DetailTableViewCell alloc] init];
-    
-    NSManagedObjectContext *context = self.managedObjectContext;
-    
-    //Receipt *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Receipt" inManagedObjectContext:context];
-    
-//    detailCell.detailSelectionLabel.text = @"Business/Personal";
+    self.allTags = [self.receiptInstance.tags allObjects];
     
     self.detailAmountLabel.text = [NSString stringWithFormat:@"%.2f", self.receiptInstance.amount];
     self.detailNoteLabel.text = self.receiptInstance.note;
@@ -52,32 +49,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSError *errR = nil;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
     
-    return allTags.count;
+    return self.allTags.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InputTableViewCell" forIndexPath:indexPath];
-    
-    NSError *errR = nil;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-//    NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
-    
-    NSArray *allTags = [[NSArray alloc] init];
-    
-    for (Tag *tag in self.receiptInstance.tags) {
+    DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailTableViewCell" forIndexPath:indexPath];
         
-    }
-    
-    Tag *oneTag = allTags[indexPath.row];
+    Tag *oneTag = self.allTags[indexPath.row];
     
     NSLog(@"%@", oneTag.tagName);
     

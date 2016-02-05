@@ -18,7 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float amount;
 @property (nullable, nonatomic, retain) NSString *note;
 @property (nonatomic) NSTimeInterval timestamp;
-@property (nullable, nonatomic, retain) Tag *tags;
+@property (nullable, nonatomic, retain) NSSet<Tag *> *tags;
+
+@end
+
+@interface Receipt (CoreDataGeneratedAccessors)
+
+- (void)addTagsObject:(Tag *)value;
+- (void)removeTagsObject:(Tag *)value;
+- (void)addTags:(NSSet<Tag *> *)values;
+- (void)removeTags:(NSSet<Tag *> *)values;
 
 @end
 
