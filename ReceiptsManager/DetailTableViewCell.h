@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DetailTableViewCell.h
 //  ReceiptsManager
 //
 //  Created by Narendra Thapa on 2016-02-04.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController 
+@interface DetailTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *detailSelectionLabel;
 
 @end
-

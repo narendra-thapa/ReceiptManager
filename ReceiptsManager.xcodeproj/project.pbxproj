@@ -14,7 +14,16 @@
 		483D83611C63BB7C00DD9F6E /* ReceiptsManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 483D835F1C63BB7C00DD9F6E /* ReceiptsManager.xcdatamodeld */; };
 		483D83631C63BB7C00DD9F6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483D83621C63BB7C00DD9F6E /* Assets.xcassets */; };
 		483D83661C63BB7C00DD9F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483D83641C63BB7C00DD9F6E /* LaunchScreen.storyboard */; };
-		483D836F1C63BD0900DD9F6E /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D836E1C63BD0900DD9F6E /* InputViewController.m */; };
+		483D83721C63C28500DD9F6E /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83711C63C28500DD9F6E /* InputViewController.m */; };
+		483D83751C63C29700DD9F6E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83741C63C29700DD9F6E /* DetailViewController.m */; };
+		483D83781C63C3B900DD9F6E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83771C63C3B900DD9F6E /* TableViewCell.m */; };
+		483D837B1C63C3E500DD9F6E /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D837A1C63C3E500DD9F6E /* DetailTableViewCell.m */; };
+		483D837E1C63C45D00DD9F6E /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D837D1C63C45D00DD9F6E /* InputTableViewCell.m */; };
+		483D83871C63C6A400DD9F6E /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83801C63C6A400DD9F6E /* Tag+CoreDataProperties.m */; };
+		483D83881C63C6A400DD9F6E /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83821C63C6A400DD9F6E /* Tag.m */; };
+		483D83891C63C6A400DD9F6E /* Receipt+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83841C63C6A400DD9F6E /* Receipt+CoreDataProperties.m */; };
+		483D838A1C63C6A400DD9F6E /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83861C63C6A400DD9F6E /* Receipt.m */; };
+		483D83911C63E7EE00DD9F6E /* InputTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83901C63E7EE00DD9F6E /* InputTagViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +38,26 @@
 		483D83621C63BB7C00DD9F6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		483D83651C63BB7C00DD9F6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		483D83671C63BB7C00DD9F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		483D836D1C63BD0900DD9F6E /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
-		483D836E1C63BD0900DD9F6E /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
+		483D83701C63C28500DD9F6E /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
+		483D83711C63C28500DD9F6E /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
+		483D83731C63C29700DD9F6E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		483D83741C63C29700DD9F6E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		483D83761C63C3B900DD9F6E /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		483D83771C63C3B900DD9F6E /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		483D83791C63C3E500DD9F6E /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		483D837A1C63C3E500DD9F6E /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
+		483D837C1C63C45D00DD9F6E /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
+		483D837D1C63C45D00DD9F6E /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
+		483D837F1C63C6A400DD9F6E /* Tag+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tag+CoreDataProperties.h"; sourceTree = "<group>"; };
+		483D83801C63C6A400DD9F6E /* Tag+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tag+CoreDataProperties.m"; sourceTree = "<group>"; };
+		483D83811C63C6A400DD9F6E /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		483D83821C63C6A400DD9F6E /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		483D83831C63C6A400DD9F6E /* Receipt+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Receipt+CoreDataProperties.h"; sourceTree = "<group>"; };
+		483D83841C63C6A400DD9F6E /* Receipt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Receipt+CoreDataProperties.m"; sourceTree = "<group>"; };
+		483D83851C63C6A400DD9F6E /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		483D83861C63C6A400DD9F6E /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
+		483D838F1C63E7EE00DD9F6E /* InputTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTagViewController.h; sourceTree = "<group>"; };
+		483D83901C63E7EE00DD9F6E /* InputTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTagViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +74,7 @@
 		483D83471C63BB7C00DD9F6E = {
 			isa = PBXGroup;
 			children = (
+				483D838B1C63C6B000DD9F6E /* CoreData */,
 				483D83521C63BB7C00DD9F6E /* ReceiptsManager */,
 				483D83511C63BB7C00DD9F6E /* Products */,
 			);
@@ -67,9 +95,19 @@
 				483D83571C63BB7C00DD9F6E /* AppDelegate.m */,
 				483D83591C63BB7C00DD9F6E /* ViewController.h */,
 				483D835A1C63BB7C00DD9F6E /* ViewController.m */,
+				483D838F1C63E7EE00DD9F6E /* InputTagViewController.h */,
+				483D83901C63E7EE00DD9F6E /* InputTagViewController.m */,
+				483D83761C63C3B900DD9F6E /* TableViewCell.h */,
+				483D83771C63C3B900DD9F6E /* TableViewCell.m */,
+				483D83701C63C28500DD9F6E /* InputViewController.h */,
+				483D83711C63C28500DD9F6E /* InputViewController.m */,
+				483D837C1C63C45D00DD9F6E /* InputTableViewCell.h */,
+				483D837D1C63C45D00DD9F6E /* InputTableViewCell.m */,
+				483D83731C63C29700DD9F6E /* DetailViewController.h */,
+				483D83741C63C29700DD9F6E /* DetailViewController.m */,
+				483D83791C63C3E500DD9F6E /* DetailTableViewCell.h */,
+				483D837A1C63C3E500DD9F6E /* DetailTableViewCell.m */,
 				483D835C1C63BB7C00DD9F6E /* Main.storyboard */,
-				483D836D1C63BD0900DD9F6E /* InputViewController.h */,
-				483D836E1C63BD0900DD9F6E /* InputViewController.m */,
 				483D83621C63BB7C00DD9F6E /* Assets.xcassets */,
 				483D83641C63BB7C00DD9F6E /* LaunchScreen.storyboard */,
 				483D83671C63BB7C00DD9F6E /* Info.plist */,
@@ -85,6 +123,21 @@
 				483D83541C63BB7C00DD9F6E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		483D838B1C63C6B000DD9F6E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				483D837F1C63C6A400DD9F6E /* Tag+CoreDataProperties.h */,
+				483D83801C63C6A400DD9F6E /* Tag+CoreDataProperties.m */,
+				483D83811C63C6A400DD9F6E /* Tag.h */,
+				483D83821C63C6A400DD9F6E /* Tag.m */,
+				483D83831C63C6A400DD9F6E /* Receipt+CoreDataProperties.h */,
+				483D83841C63C6A400DD9F6E /* Receipt+CoreDataProperties.m */,
+				483D83851C63C6A400DD9F6E /* Receipt.h */,
+				483D83861C63C6A400DD9F6E /* Receipt.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,11 +210,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483D83911C63E7EE00DD9F6E /* InputTagViewController.m in Sources */,
+				483D83881C63C6A400DD9F6E /* Tag.m in Sources */,
+				483D83781C63C3B900DD9F6E /* TableViewCell.m in Sources */,
 				483D835B1C63BB7C00DD9F6E /* ViewController.m in Sources */,
 				483D83581C63BB7C00DD9F6E /* AppDelegate.m in Sources */,
 				483D83611C63BB7C00DD9F6E /* ReceiptsManager.xcdatamodeld in Sources */,
-				483D836F1C63BD0900DD9F6E /* InputViewController.m in Sources */,
+				483D83721C63C28500DD9F6E /* InputViewController.m in Sources */,
+				483D83891C63C6A400DD9F6E /* Receipt+CoreDataProperties.m in Sources */,
+				483D838A1C63C6A400DD9F6E /* Receipt.m in Sources */,
 				483D83551C63BB7C00DD9F6E /* main.m in Sources */,
+				483D83871C63C6A400DD9F6E /* Tag+CoreDataProperties.m in Sources */,
+				483D837B1C63C3E500DD9F6E /* DetailTableViewCell.m in Sources */,
+				483D837E1C63C45D00DD9F6E /* InputTableViewCell.m in Sources */,
+				483D83751C63C29700DD9F6E /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
