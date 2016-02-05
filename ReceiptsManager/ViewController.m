@@ -60,6 +60,15 @@
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+//    NSError *errR = nil;
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+//    [fetchRequest setEntity:entity];
+//    NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+//    
+//    return allTags.count;
+    
     return 1;
 }
 
@@ -93,6 +102,32 @@
 
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+if (editingStyle == UITableViewCellEditingStyleDelete) {
+    
+    
+        NSError *errR = nil;
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
+    
+        NSArray *allReceipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+
+        NSManagedObject *aManagedObject = [allReceipts objectAtIndex:indexPath.row];
+
+        [self.managedObjectContext deleteObject:aManagedObject];
+    
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            // Handle the error.
+        }
+        
+        //[tempReceiptArray removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 #pragma mark - Input View Controller Delegate
 
 -(void)newItemDetails:(Receipt *)newItem {
@@ -104,6 +139,7 @@
 
 -(void)newTagDetails:(Tag *)newItem {
     NSLog(@"Save new tag");
+    
 }
 
 #pragma mark - Segues

@@ -24,6 +24,7 @@
 		483D839B1C64425900DD9F6E /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83951C64425900DD9F6E /* Receipt.m */; };
 		483D839C1C64425900DD9F6E /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83971C64425900DD9F6E /* Tag+CoreDataProperties.m */; };
 		483D839D1C64425900DD9F6E /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83991C64425900DD9F6E /* Tag.m */; };
+		483D83C51C652A1C00DD9F6E /* TagViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D83C41C652A1C00DD9F6E /* TagViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		483D83971C64425900DD9F6E /* Tag+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tag+CoreDataProperties.m"; sourceTree = "<group>"; };
 		483D83981C64425900DD9F6E /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		483D83991C64425900DD9F6E /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		483D83C31C652A1C00DD9F6E /* TagViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewCell.h; sourceTree = "<group>"; };
+		483D83C41C652A1C00DD9F6E /* TagViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +98,12 @@
 				483D83571C63BB7C00DD9F6E /* AppDelegate.m */,
 				483D83591C63BB7C00DD9F6E /* ViewController.h */,
 				483D835A1C63BB7C00DD9F6E /* ViewController.m */,
-				483D838F1C63E7EE00DD9F6E /* InputTagViewController.h */,
-				483D83901C63E7EE00DD9F6E /* InputTagViewController.m */,
 				483D83761C63C3B900DD9F6E /* TableViewCell.h */,
 				483D83771C63C3B900DD9F6E /* TableViewCell.m */,
+				483D838F1C63E7EE00DD9F6E /* InputTagViewController.h */,
+				483D83901C63E7EE00DD9F6E /* InputTagViewController.m */,
+				483D83C31C652A1C00DD9F6E /* TagViewCell.h */,
+				483D83C41C652A1C00DD9F6E /* TagViewCell.m */,
 				483D83701C63C28500DD9F6E /* InputViewController.h */,
 				483D83711C63C28500DD9F6E /* InputViewController.m */,
 				483D837C1C63C45D00DD9F6E /* InputTableViewCell.h */,
@@ -224,6 +229,7 @@
 				483D837B1C63C3E500DD9F6E /* DetailTableViewCell.m in Sources */,
 				483D837E1C63C45D00DD9F6E /* InputTableViewCell.m in Sources */,
 				483D83751C63C29700DD9F6E /* DetailViewController.m in Sources */,
+				483D83C51C652A1C00DD9F6E /* TagViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +376,7 @@
 				483D836C1C63BB7C00DD9F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

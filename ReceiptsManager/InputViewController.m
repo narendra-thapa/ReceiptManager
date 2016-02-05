@@ -71,6 +71,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.noteEntered resignFirstResponder];
+    [self.amountEntered resignFirstResponder];
     
     InputTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
@@ -116,6 +118,11 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.noteEntered resignFirstResponder];
+    [self.amountEntered resignFirstResponder];
 }
 
 /*

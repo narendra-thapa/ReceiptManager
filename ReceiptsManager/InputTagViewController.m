@@ -9,8 +9,11 @@
 #import "InputTagViewController.h"
 #import "AppDelegate.h"
 #import "Tag.h"
+#import "TagViewCell.h"
 
 @interface InputTagViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -42,9 +45,78 @@
     }
     
     [self.delegate newTagDetails:newManagedObject];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.enteredTag resignFirstResponder];
+    [self.tableView reloadData];
+    [self.enteredTag clearButtonMode];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.enteredTag resignFirstResponder];
+}
+
+#pragma mark - Table View
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    NSError *errR = nil;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+    
+    return allTags.count;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TagViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TagViewCell" forIndexPath:indexPath];
+    
+    NSError *errR = nil;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+    
+    Tag *oneTag = allTags[indexPath.row];
+    NSLog(@"%@", oneTag.tagName);
+    cell.tagViewCell.text = oneTag.tagName;
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        NSError *errR = nil;
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
+        
+        NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+        
+        NSManagedObject *aManagedObject = [allTags objectAtIndex:indexPath.row];
+        
+        [self.managedObjectContext deleteObject:aManagedObject];
+        
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            // Handle the error.
+        }
+        
+        //[tempReceiptArray removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+
 
 /*
 #pragma mark - Navigation

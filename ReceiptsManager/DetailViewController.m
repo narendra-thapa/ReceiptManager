@@ -30,7 +30,8 @@
     
     NSDate *currentDate = [[NSDate alloc] initWithTimeIntervalSince1970:self.receiptInstance.timestamp];
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
-    dateformatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    dateformatter.dateFormat = @"EEE MMM d, yyyy HH:mm a";
+    //dateformatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     self.detailDateLabel.text = [dateformatter stringFromDate:currentDate];
     
     // Do any additional setup after loading the view.
