@@ -23,8 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tagSet = [[NSMutableSet alloc] init];
-    
-    
     // Do any additional setup after loading the view.
 }
 
@@ -63,7 +61,6 @@
     
     Tag *oneTag = allTags[indexPath.row];
     //NSLog(@"%@", oneTag.tagName);
-    
     cell.inputSelectionLabel.text = oneTag.tagName;
     
     return cell;
@@ -107,6 +104,21 @@
     newManagedObject.note = self.noteEntered.text;
     newManagedObject.timestamp = [[self.dateEntered date] timeIntervalSince1970];
     newManagedObject.tags = self.tagSet;
+    
+    // Defaulting a Tag if no Tag selected
+    NSError *errR = nil;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
+    
+    Tag *defaultTag = [allTags objectAtIndex:0];
+    
+    if (newManagedObject.tags.count == 0) {
+        [self.tagSet addObject:defaultTag];
+        newManagedObject.tags = self.tagSet;
+    }
     
     NSError *error = nil;
     if (![context save:&error]) {

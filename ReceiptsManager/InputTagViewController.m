@@ -24,6 +24,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -72,8 +77,6 @@
     return allTags.count;
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TagViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TagViewCell" forIndexPath:indexPath];
     
@@ -102,17 +105,18 @@
         
         NSArray *allTags = [self.managedObjectContext executeFetchRequest:fetchRequest error:&errR];
         
+        Tag *defaultTag = [allTags objectAtIndex:0];
+        
         NSManagedObject *aManagedObject = [allTags objectAtIndex:indexPath.row];
         
-        [self.managedObjectContext deleteObject:aManagedObject];
-        
-        NSError *error;
-        if (![self.managedObjectContext save:&error]) {
-            // Handle the error.
+        if (defaultTag != aManagedObject) {
+            [self.managedObjectContext deleteObject:aManagedObject];
+            NSError *error;
+            if (![self.managedObjectContext save:&error]) {
+                // Handle the error.
+            }
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }
-        
-        //[tempReceiptArray removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
